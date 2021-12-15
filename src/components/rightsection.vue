@@ -4,6 +4,14 @@ export default {
         return {
             song: { name: 'Ophelia', producer: 'Jay Khan', album: 'Blue', bpm: 91, duration: 2.45 }
         }
+    },
+    methods: {
+        playSound (sound) {
+            if(sound) {
+            var audio = new Audio(sound)
+            audio.play()
+            }
+        }
     }
 }
 </script>
@@ -32,8 +40,9 @@ export default {
                 
                 <div class="mt-10 flex justify-center">
                     <i class="fas fa-angle-double-left border border-gray-400 rounded-full p-2 h-1/2 m-2"></i>
-                    <button onclick=""
-                    class="bg-green-600 rounded-full text-white p-4">
+                    <button @click.prevent="playSound('https://khanquest-heroku.s3.amazonaws.com/Ophelia-final.mp3')"
+                    class="bg-green-600 rounded-full text-white p-4"
+                    :class="playing ? 'Pause' : 'Play'">
                         <i class="fas fa-play hover:text-blue-900 duration-300 text-4xl p-2"></i>
                     </button>
                     <i class="fas fa-angle-double-right border border-gray-400 rounded-full p-2 h-1/2 m-2"></i>
@@ -43,13 +52,16 @@ export default {
 
             <div class="grid grid-cols-4 gap-2 text-white bg-gray-900 rounded-lg p-2">
                 <button onclick="" class="">
-                    <i class="fas fa-download hover:text-blue-900 duration-300 text-2xl p-2"></i>
+                    <i class="fas fa-sliders-h hover:text-blue-900 duration-300 text-2xl p-2"></i>
                 </button>
                 <button onclick="" class="">
-                    <i class="fas fa-volume-up hover:text-blue-900 duration-300 text-2xl p-2"></i>
+                    <i class="fas fa-volume-mute hover:text-blue-900 duration-300 text-2xl p-2"></i>
                 </button>
                 <button onclick="" class="">
-                    <i class="fas fa-volume-down hover:text-blue-900 duration-300 text-2xl p-2"></i>
+                    <i class="fas fa-share-alt hover:text-blue-900 duration-300 text-2xl p-2"></i>
+                </button>
+                <button onclick="" class="">
+                    <i class="fab fa-bitcoin hover:text-blue-900 duration-300 text-2xl p-2"></i>
                 </button>
             </div>
         </div>

@@ -16,7 +16,7 @@ export default {
   <div class="lg:col-span-2 bg-gray-800">    
     <Leftnav />
   </div>
-  <div class="lg:col-span-4 bg-gray-800 border-r-2 border-l-2 border-black">
+  <div class="lg:col-span-4 bg-gray-800 border-r-2 border-l-2 border-black overflow-auto">
     
     <Mainsection />
   </div>
@@ -28,5 +28,8 @@ export default {
 </template>
 
 <style>
-
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;300;400;700&display=swap');
+* {
+  font-family: 'Outfit', sans-serif;
+}
 </style>
