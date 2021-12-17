@@ -40,7 +40,7 @@ export default {
                 
                 <div class="mt-10 flex justify-center">
                     <i class="fas fa-angle-double-left border border-gray-400 rounded-full p-2 h-1/2 m-2"></i>
-                    <button @click.prevent="playSound('https://khanquest-heroku.s3.amazonaws.com/Ophelia-final.mp3')"
+                    <button @click.prevent=""
                     class="bg-green-600 rounded-full text-white p-4"
                     :class="playing ? 'Pause' : 'Play'">
                         <i class="fas fa-play hover:text-blue-900 duration-300 text-4xl p-2"></i>
