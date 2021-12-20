@@ -1,31 +1,28 @@
+<template>
+<div class="grid grid-cols-3 bg-gray-900">
+  <div>
+      <Leftnav class="fixed left-0 bg-black" />
+  </div>
+  <div class="w-full bg-gray-900">
+      <router-view></router-view>
+  </div>
+  <div class="fixed right-0 bg-black">
+    <Musicplayer />
+  </div>
+</div>
+</template>
+
 <script>
 import Leftnav from './components/leftnav.vue'
-import Mainsection from './components/mainsection.vue'
-import Rightsection from './components/rightsection.vue'
+import Musicplayer from './components/musicplayer.vue'
 export default {
+  name: 'app',
   components: {
     Leftnav,
-    Mainsection,
-    Rightsection
+    Musicplayer
   }
 }
 </script>
-
-<template>
-<div class="grid lg:grid-cols-8 sm:grid-cols-1 lg:h-screen">
-  <div class="lg:col-span-2 bg-gray-800">    
-    <Leftnav />
-  </div>
-  <div class="lg:col-span-4 bg-gray-800 border-r-2 border-l-2 border-black overflow-auto">
-    
-    <Mainsection />
-  </div>
-  <div class="lg:col-span-2 bg-gray-800">
-    <Rightsection />
-  </div>
-</div>
-
-</template>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;300;400;700&display=swap');

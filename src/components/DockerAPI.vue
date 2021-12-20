@@ -1,9 +1,8 @@
 <script>
 import axios from 'axios'
-const API_ROOT = 'https://khanquest.herokuapp.com/api/v2/pages/'
 
 export default {
-    name: 'Mainsection',
+    name: 'DockerAPI',
     props: {
         msg: String
     },
@@ -12,7 +11,7 @@ export default {
     },
     mounted() {
         axios
-        .get(API_ROOT + '?type=songs.SongPage&fields=title,song_file,song_key,song_image_thumbnail,bpm')
+        .get('http://localhost:8000/api/songs/')
         .then(response => (this.songs = response.data.items))
         .catch(error => console.log(error))
     }    
@@ -48,8 +47,8 @@ export default {
                 <div>
                     <h1 class="text-white p-2 text-2xl font-bold">{{item.title}}</h1>
                     <div class="flex">
-                        <p class="text-sm p-2 text-white mx-1">BPM: {{item.bpm}}</p>
-                        <p class="text-sm p-2 text-white mx-1">KEY: {{item.song_key}}</p>
+                        
+                        
                     </div>
                     
                 </div>
