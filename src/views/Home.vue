@@ -1,5 +1,5 @@
 <template>
-<div class="text-white" id="home-bg">
+<div class="text-white h-screen" id="home-bg">
     <h1 class="text-8xl font-bold my-8">Profile</h1>
         <Profile />
 
