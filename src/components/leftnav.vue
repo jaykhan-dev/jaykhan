@@ -1,6 +1,7 @@
 <template>
-<div class="lg:h-screen flex flex-col lg:justify-between z-10">
 
+<div class="lg:h-screen flex flex-col lg:justify-between z-10">
+    
     <div class="items-center">
         <div class="p-4 border-b border-black justify-center">
             <img src="../assets/white-jk-logo.png" width="200" height="200" alt="">
@@ -8,6 +9,7 @@
                 <h1 class="text-4xl text-white text-sky-500 uppercase font-bold">{{name}}</h1>
                 <p class="text-white text-sm">{{role}}</p>
             </div>
+            
         </div>
         
         <div class="p-4">
@@ -53,7 +55,13 @@ export default {
     data: function () {
         return {
             name: 'Jay Khan',
-            role: 'Music Producer'
+            role: 'Music Producer',
+            showMenu: false,
+        }
+    },
+    methods: {
+        toggleNavbar: function() {
+            this.showMenu = !this.showMenu
         }
     },
 }

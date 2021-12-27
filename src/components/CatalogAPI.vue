@@ -15,15 +15,12 @@
     <div>
         <h1 class="text-2xl font-bold uppercase text-white p-4">Tracks:</h1>
     </div>
-    <div class="p-4">
+    <div class="p-4 grid lg:grid-cols-4 gap-4">
         <div
             v-for="item in songs"
             :key='item.id'
-            class="my-4 border border-gray-900 rounded-lg flex hover:bg-green-600">
-            <router-link :to="/musicplayer/+ item.id" class="flex">
-                <div class="bg-sky-500 grid place-items-center rounded-l-lg">
-                    <i class="fas fa-volume-up text-white text-2xl p-4"></i>
-                </div>
+            class="my-4 border border-white p-4 flex hover:bg-green-600 ">
+            <router-link :to="/musicplayer/+ item.id" class="flex">                
                 <div>
                     <h1 class="text-white p-2 text-2xl font-bold">{{item.title}}</h1>
                     <div class="flex">

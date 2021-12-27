@@ -1,14 +1,20 @@
 <template>
-<div class="grid grid-cols-3 bg-gray-900">
-  <div>
-      <Leftnav class="fixed left-0 bg-black" />
+<div class="grid grid-cols-1 bg-gray-900">
+
+  <button class="fixed bottom-5 right-5 p-4 border border-white z-20 bg-black block cursor-pointer text-white" 
+          type="button" 
+          @click="toggleNavbar()">
+        Menu 
+  </button>
+
+  <div class="">
+      <Leftnav class="absolute bg-black w-full" :class="{'hidden': !showMenu, 'flex': showMenu}" />
   </div>
-  <div class="w-full bg-gray-900">
+
+  <div class="w-full flex justify-center bg-gray-900">
       <router-view></router-view>
   </div>
-  <div class="fixed right-0 bg-black">
-    <Musicplayer />
-  </div>
+ 
 </div>
 </template>
 
@@ -20,6 +26,16 @@ export default {
   components: {
     Leftnav,
     Musicplayer
+  },
+  data() {
+    return {
+      showMenu: false
+    }
+  },
+  methods: {
+    toggleNavbar: function() {
+      this.showMenu = !this.showMenu
+    }
   }
 }
 </script>
